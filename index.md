@@ -1,10 +1,10 @@
 # Bitcoin
 
-!SLIDE top-right
+!SLIDE
 
-# Bitcoin
+# "Bitcoin" by dinosaur
 
-}}} images/dinobitcoin.png
+<img src="images/dinobitcoin.png" />
 
 !SLIDE
 
@@ -173,10 +173,7 @@ making
 - coin creation
   - starts at an initial rate of 50 coins per ~10 minutes (per block)
     - this rate halves roughly every ~4 years (210,000 blocks)
-  - current rate of production is 25 coins per ~10 minutes (per block)
-  - currently 11.047 million bitcoins created
-  - will never be more than 21 million bitcoins
-- optional transaction fees can also be used to incentize miners
+- optional transaction fees also incentize miners
 
 !SLIDE
 
@@ -195,6 +192,16 @@ making
 
 !SLIDE
 
+# exchanging between
+## fiat and crypto
+  
+- local exchanges like [localbitcoins](https://localbitcoins.com)
+- online exchanges like [campbx](https://campbx.com/), [mtgox](https://mtgox.com/), etc
+- online sellers like [coinbase](https://coinbase.com/), [bitinstant](https://www.bitinstant.com/), [btcquick](https://btcquick.com), etc
+- local atms soon
+
+!SLIDE
+
 # transactions
 
 - instant for unconfirmed
@@ -202,6 +209,11 @@ making
 - available 24/7
 - < 1% fees
 - irreversible
+
+!SLIDE
+
+# who accepts bitcoin?
+## [more than you think](https://en.bitcoin.it/wiki/Trade)
 
 !SLIDE
 
@@ -213,22 +225,7 @@ making
 
 !SLIDE
 
-# exchanging between
-## fiat and crypto
-  
-- local exchanges like [localbitcoins](https://localbitcoins.com)
-- online exchanges like [campbx](https://campbx.com/), [mtgox](https://mtgox.com/), etc
-- online sellers like [coinbase](https://coinbase.com/), [bitinstant](https://www.bitinstant.com/), [btcquick](https://btcquick.com), etc
-- local atms soon
-
-!SLIDE
-
-# who accepts bitcoin?
-## [more than you think](https://en.bitcoin.it/wiki/Trade)
-
-!SLIDE
-
-# [bitcoin](https://en.bitcoin.it/wiki/Main_Page) ecosystem
+# how to hack on [bitcoin](https://en.bitcoin.it/wiki/Main_Page)
 
 - wallets
   - [bitcoin rpc](https://en.bitcoin.it/wiki/API_reference_(JSON-RPC\))
