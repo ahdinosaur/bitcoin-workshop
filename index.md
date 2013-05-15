@@ -2,7 +2,7 @@
 
 !SLIDE
 
-# "Bitcoin" by dinosaur
+# "Bitcoin" by [dinosaur](https://dinosaur.io)
 
 <img src="images/dinobitcoin.png" />
 
@@ -31,7 +31,7 @@ example: a chicken for a bundle of lumber
 
 # commodities
 
-allow for single medium of exchange used by all
+allow for single medium of exchange
 
 - cattle (cows, camels, goats, ...)
 - shells
