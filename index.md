@@ -84,7 +84,7 @@ fiat money allows banks to create more placeholder money at will.
 
 !SLIDE
 
-# compare with Bitcoin
+# [compare with Bitcoin](http://bitcoin.stackexchange.com/questions/2834/what-are-the-perceived-advantages-of-bitcoin-as-a-store-of-value)
 
 Bitcoin decentralizes control of money supply
 
@@ -103,7 +103,7 @@ Bitcoin decentralizes control of money supply
 
 !SLIDE
 
-# compare with Bitcoin
+# [compare with Bitcoin](http://bitcoin.stackexchange.com/questions/305/what-are-the-perceived-advantages-of-bitcoin-as-a-means-of-exchange)
 
     "What is needed is an electronic payment system based on cryptographic proof instead of trust, allowing any two willing parties to transact directly with each other without the need for a trusted third party"
 
