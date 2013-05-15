@@ -1,62 +1,480 @@
-<!DOCTYPE html>  
-<!-- Parts from HTML5 Boilerplate: http://html5boilerplate.com -->
-
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ --> 
-<!--[if lt IE 7 ]> <html lang="en" class="ie6"> <![endif]-->
-<!--[if IE 7 ]>    <html lang="en" class="ie7"> <![endif]-->
-<!--[if IE 8 ]>    <html lang="en" class="ie8"> <![endif]-->
-<!--[if IE 9 ]>    <html lang="en" class="ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
-<head>
-	<meta charset="utf-8">
-
-	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame 
-	Remove this if you use the .htaccess -->
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-	<title>Bitcoin workshop</title>
-	<meta name="description" content="Hackers@Berkeley Bitcoin workshop">
-	<meta name="author" content="Michael Williams">
-
-	<!--  Mobile viewport optimized: adapted from Modernizr and
-	      http://stackoverflow.com/questions/2581957/iphone-safari-does-not-auto-scale-back-down-on-portrait-landscape-portrait
-	 -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, maximum-scale=1.0">
-	<meta name="apple-mobile-web-app-capable" content="yes"/>
-	
-	<!-- Ensure no FUOC in the slides -->
-	<style type="text/css">
-          .presentation-loading * {
-            visibility: hidden;
-          }
-	</style>
-	
-	<!-- Load curl AMD Loader -->
-	<script src="lib/curl.js"></script>
-
-	<!-- Start the app by configuring curl and loading modules -->
-	<script src="app/run.js"></script>
-</head>
-
-<!-- Avoid any FUOC by adding presentation-loading, which the framework
-     will remove later once the first slide is ready -->
-<body class="presentation-loading">
-
-	<div>
-		<!-- The container to hold the slides -->
-		<div id="slide-container">
-
-		</div>
-
-		<!-- Extra notes -->
-		<footer>
-                <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><p>copyleft. <!--[if lte IE 8]><span style="filter: FlipH; -ms-filter: "FlipH"; display: inline-block;"><![endif]-->
-                    <span style="-moz-transform: scaleX(-1); -o-transform: scaleX(-1); -webkit-transform: scaleX(-1); transform: scaleX(-1); display: inline-block;">
-                          &copy;
-                      </span>
-                      <!--[if lte IE 8]></span><![endif]--></p></a>
-		</footer>
-	</div>
-	
-</body>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bitcoin</title>
+    <meta charset='utf-8'>
+    <meta content='width=1024, user-scalable=no' name='viewport'>
+    <!-- deck.js's core css -->
+    <link href="deck.js/core/deck.core.css" rel="stylesheet" type="text/css"/>
+    <!-- deck.js extension CSS files -->
+    <link href="deck.js/extensions/hash/deck.hash.css" rel="stylesheet" type="text/css"/>
+    <link href="deck.js/extensions/codemirror/deck.codemirror.css" rel="stylesheet" type="text/css"/>
+    <link href="deck.js/extensions/goto/deck.goto.css" rel="stylesheet" type="text/css"/>
+    <link href="deck.js/extensions/scale/deck.scale.css" rel="stylesheet" type="text/css"/>
+    <link href="deck.js/extensions/status/deck.status.css" rel="stylesheet" type="text/css"/>
+    <link href="deck.js/extensions/menu/deck.menu.css" rel="stylesheet" type="text/css"/>
+    <link href="deck.js/extensions/navigation/deck.navigation.css" rel="stylesheet" type="text/css"/>
+    <!-- all css in the css dir: Keydown CSS, your custom CSS, and themes from deck.js -->
+    <link href="css/keydown.css" rel="stylesheet" type="text/css"/>
+    <link href="css/bitcoin-workshop.css" rel="stylesheet" type="text/css"/>
+    <link href="css/horizontal-slide.css" rel="stylesheet" type="text/css"/>
+    <link href="css/swiss.css" rel="stylesheet" type="text/css"/>
+    <link href="css/default.css" rel="stylesheet" type="text/css"/>
+    <!-- Modernizr (provided for legacy browsers) -->
+    <script src="deck.js/support/modernizr.custom.js" type="text/javascript"></script>
+  </head>
+  <body class='deck-container keydown'>
+    <section class='dinobitcoin full-background slide top-right'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Bitcoin</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>what is money?</h1>
+        
+        <ul>
+        <li><a href="http://wiki.mises.org/wiki/Money">money</a> is something used as a medium of exchange between equal values of work and resources.
+        
+        <ul>
+        <li>store of value</li>
+        <li>transaction medium</li>
+        </ul></li>
+        </ul>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>barter</h1>
+        
+        <p>example: a chicken for a bundle of lumber</p>
+        
+        <h2>limitations</h2>
+        
+        <ul>
+        <li>both people involved need to have what the other wants</li>
+        <li>absence of common measure of value</li>
+        <li>not all items are divisible</li>
+        <li>perishable items depreciate in value quickly</li>
+        </ul>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>commodities</h1>
+        
+        <p>allow for single medium of exchange used by all</p>
+        
+        <ul>
+        <li>cattle (cows, camels, goats, ...)</li>
+        <li>shells</li>
+        <li>tools</li>
+        <li>tobacco</li>
+        <li>cotton</li>
+        <li>copper</li>
+        <li>silver</li>
+        <li>gold</li>
+        </ul>
+        
+        <p>...</p>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>precious metals</h1>
+        
+        <p>preferred because of their physical properties</p>
+        
+        <ul>
+        <li>scarce</li>
+        <li>durable</li>
+        <li>divisible</li>
+        <li>has distinct look and sound</li>
+        <li>homogeneous</li>
+        <li>malleable</li>
+        <li>beautiful</li>
+        </ul>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>paper placeholders</h1>
+        
+        <p>instead of carrying physical commodities, people started using paper notes, token coins, credit cards, and electronic bank accounts to act as placeholders for actual money</p>
+        
+        <p><img src="images/silver_certificate.jpg" /></p>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>fiat value</h1>
+        
+        <p>instead of 1:1 relationship between paper notes and physical commodities, banks began to base paper notes on fiat declarations of value.</p>
+        
+        <p><img src="images/fiat.jpg" /></p>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>unbounded supply</h1>
+        
+        <p>fiat money allows banks to create more placeholder money at will.</p>
+        
+        <ul>
+        <li>currently happening at the rate of <a href="http://www.federalreserve.gov/newsevents/press/monetary/20120913a.htm">$85</a> billion USD per month</li>
+        <li><a href="http://www.amazon.com/dp/1591845564">money supply becomes political tool of nation-states</a></li>
+        </ul>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>compare with Bitcoin</h1>
+        
+        <p>Bitcoin decentralizes control of money supply</p>
+        
+        <p><img src="images/total_bitcoins_over_time_graph.png" /></p>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='left slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>transactional friction</h1>
+        
+        <ul>
+        <li>making payments today requires trusting a 3rd-party
+        
+        <ul>
+        <li>bank, credit union, credit card company, ...</li>
+        </ul></li>
+        <li>these 3rd-parties mediate disputes through non-reversible transactions (chargebacks)
+        
+        <ul>
+        <li>increases costs and limits minimum transaction size</li>
+        <li>with possibility of reversal, need for trust spreads</li>
+        </ul></li>
+        <li>high fees, not possible to pay on weekends</li>
+        </ul>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>compare with Bitcoin</h1>
+        
+        <pre><code>&quot;What is needed is an electronic payment system based on cryptographic proof instead of trust, allowing any two willing parties to transact directly with each other without the need for a trusted third party&quot;
+        </code></pre>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <p><img src="images/change.jpg" /></p>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>how does Bitcoin work?</h1>
+        
+        <p><a href="images/bitcoin.pdf">Satoshi Nakamoto&#39;s original whitepaper</a></p>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>what is a bitcoin?</h1>
+        
+        <pre><code>&quot;We define an electronic coin as a chain of digital signatures. Each owner transfers the coin to the next by digitally signing a hash of the previous transaction and the public key of the next owner and adding these to the end of the coin. A payee can verify the signatures to verify the chain of ownership.&quot;
+        </code></pre>
+        
+        <p><img src="images/transactions.png" /></p>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='left slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>double-spend</h1>
+        
+        <pre><code>&quot;The problem of course is the payee can&#39;t verify that one of the owners did not double-spend the coin.&quot;
+        </code></pre>
+        
+        <ul>
+        <li>common solution is to introduce a trusted central authority
+        
+        <ul>
+        <li>after each transaction, return coin to mint</li>
+        <li>mint checks transaction and issues new coin</li>
+        </ul></li>
+        <li>problem is entire money system relies on this central authority</li>
+        </ul>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>timestamp server</h1>
+        
+        <pre><code>&quot;The solution we propose begins with a timestamp server. A timestamp server works by taking a hash of a block of items to be timestamped and widely publishing the hash... The timestamp proves that the data must have existed at the time, obviously, in order to get into the hash. Each timestamp includes the previous timestamp in its hash, forming a chain, with each additional timestamp reinforcing the ones before it.&quot;
+        </code></pre>
+        
+        <p><img src="images/timestamp.png" /></p>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='left slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>proof-of-work</h1>
+        
+        <pre><code>&quot;To implement a distributed timestamp server on a peer-to-peer basis, we will need to use a proof-of-work system... The proof-of-work involves scanning for a value that when hashed, such as with SHA-256, the hash begins with a number of zero bits. The average work required is exponential in the number of zero bits required and can be verified by executing a single hash.&quot;
+        </code></pre>
+        
+        <ul>
+        <li>solves the problem of determining representation in majority decision
+        making
+        
+        <ul>
+        <li>one-CPU-one-vote</li>
+        <li>the majority decision is represented by the longest chain, which has the greatest proof-of-work effort invested in it</li>
+        </ul></li>
+        </ul>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='left slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>decentralized trust</h1>
+        
+        <ul>
+        <li>if a majority of CPU power is controlled by honest nodes, the honest chain will grow the fastest and outpace any competing chains</li>
+        <li>to modify a past block, an attacker would have to redo the proof-of-work of the block and all blocks after it and then catch up with and surpass the work of the honest nodes
+        
+        <ul>
+        <li>probability of a slower attacker catching up diminishes exponentially as subsequent blocks are added</li>
+        </ul></li>
+        <li>to compensate for varience in mining power over time, the proof-of-work difficulty is determined by a moving average targeting 1 block every 10 minutes</li>
+        </ul>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='left slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>decentralized supply</h1>
+        
+        <pre><code>&quot;By convention, the first transaction in a block is a special transaction that starts a new coin owned by the creator of the block. This adds an incentive for nodes to support the network, and provides a way to initially distribute coins into circulation, since there is no central authority to issue them.&quot;
+        </code></pre>
+        
+        <ul>
+        <li>coin creation
+        
+        <ul>
+        <li>starts at an initial rate of 50 coins per ~10 minutes (per block)</li>
+        <li>this rate halves roughly every ~4 years (210,000 blocks)</li>
+        <li>current rate of production is 25 coins per ~10 minutes (per block)</li>
+        <li>currently 11.047 million bitcoins created</li>
+        <li>will never be more than 21 million bitcoins</li>
+        </ul></li>
+        <li>optional transaction fees can also be used to incentize miners</li>
+        </ul>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>practical usage of Bitcoin</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>wallets</h1>
+        
+        <ul>
+        <li>your wallet is a file and you do with it as you please</li>
+        <li>full node wallets like bitcoin-qt</li>
+        <li>thin client wallets like electrum</li>
+        <li>online client-side wallets like <a href="https://blockchain.info">blockchain.info</a></li>
+        <li><a href="https://bitaddress.org">paper/brain/vanity wallets</a></li>
+        <li><a href="https://en.bitcoin.it/wiki/Hardware_wallet">hardware wallets</a></li>
+        </ul>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>transactions</h1>
+        
+        <ul>
+        <li>instant for unconfirmed</li>
+        <li>~10 minutes per confirmation</li>
+        <li>available 24/7</li>
+        <li>&lt; 1% fees</li>
+        <li>irreversible</li>
+        </ul>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>transaction history</h1>
+        
+        <ul>
+        <li>transactions are public to everyone on the blockchain</li>
+        <li>traced to pseudonyms</li>
+        <li>capable of true anonymity with <a href="https://torproject.org">tor</a> and <a href="https://blockchain.info/wallet/send-shared">coin mixing services</a>, or proposed <a href="http://spar.isi.jhu.edu/~mcgreen/ZerocoinOakland.pdf">zerocoin extension</a></li>
+        </ul>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>exchanging between</h1>
+        
+        <h2>fiat and crypto</h2>
+        
+        <ul>
+        <li>local exchanges like <a href="https://localbitcoins.com">localbitcoins</a></li>
+        <li>online exchanges like <a href="https://campbx.com/">campbx</a>, <a href="https://mtgox.com/">mtgox</a>, etc</li>
+        <li>online sellers like <a href="https://coinbase.com/">coinbase</a>, <a href="https://www.bitinstant.com/">bitinstant</a>, <a href="https://btcquick.com">btcquick</a>, etc</li>
+        <li>local atms soon</li>
+        </ul>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>who accepts bitcoin?</h1>
+        
+        <h2><a href="https://en.bitcoin.it/wiki/Trade">more than you think</a></h2>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1><a href="https://en.bitcoin.it/wiki/Main_Page">bitcoin</a> ecosystem</h1>
+        
+        <ul>
+        <li>wallets
+        
+        <ul>
+        <li><a href="https://en.bitcoin.it/wiki/API_reference_(JSON-RPC)">bitcoin rpc</a></li>
+        <li><a href="https://blockchain.info">blockchain.info</a></li>
+        </ul></li>
+        <li>payment processors</li>
+        <li>fiat/btc exchange</li>
+        <li>asset exchanges</li>
+        </ul>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>questions?</h1>
+        
+        <h2>comments?</h2>
+        
+        <h3>email me at <a href="mailto:dinosaur@riseup.net">dinosaur@riseup.net</a></h3>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>other sources</h1>
+        
+        <ul>
+        <li><a href="https://bitcointalk.org">https://bitcointalk.org</a></li>
+        <li><a href="http://reddit.com/r/Bitcoin">http://reddit.com/r/Bitcoin</a></li>
+        <li><a href="http://www.slideshare.net/KyleDrake/bitcoin-the-cyberpunk-cryptocurrency">http://www.slideshare.net/KyleDrake/bitcoin-the-cyberpunk-cryptocurrency</a></li>
+        </ul>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <!-- deck.js navigation extension -->
+    <a class='deck-prev-link' href='#' title='Previous'>&#8592;</a>
+    <a class='deck-next-link' href='#' title='Next'>&#8594;</a>
+    <!-- deck.js hash extension -->
+    <a class='deck-permalink' href='.' title='Permalink to this slide'>#</a>
+    <!-- deck.js status extension -->
+    <p class='deck-status'>
+      <span class='deck-status-current'></span>
+      /
+      <span class='deck-status-total'></span>
+    </p>
+    <!-- jQuery & deck.js -->
+    <script src="deck.js/support/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="deck.js/core/deck.core.js" type="text/javascript"></script>
+    <!-- deck.js extension JS files -->
+    <script src="deck.js/extensions/hash/deck.hash.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/codemirror.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/css/css.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/plsql/plsql.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/yaml/yaml.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/xml/xml.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/velocity/velocity.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/diff/diff.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/clojure/clojure.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/javascript/javascript.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/r/r.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/coffeescript/coffeescript.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/htmlmixed/htmlmixed.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/rst/rst.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/smalltalk/smalltalk.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/xmlpure/xmlpure.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/ruby/ruby.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/clike/clike.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/python/python.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/scheme/scheme.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/stex/stex.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/sparql/sparql.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/lua/lua.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/php/php.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/haskell/haskell.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/deck.codemirror.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/goto/deck.goto.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/scale/deck.scale.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/status/deck.status.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/menu/deck.menu.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/navigation/deck.navigation.js" type="text/javascript"></script>
+    <!-- your custom JS here, including call to initialize deck.js-codemirror -->
+    <script src="js/bitcoin-workshop.js" type="text/javascript"></script>
+    <!-- Initialize the deck. -->
+    <script type='text/javascript'>
+      $(function() { $.deck('.slide'); });
+    </script>
+  </body>
 </html>
