@@ -70,7 +70,7 @@ instead of carrying physical commodities, people started using paper notes, toke
 
 # fiat value
 
-instead of 1:1 relationship between paper notes and physical commodities, banks began to base paper notes on fiat declarations of value.
+instead of 1:1 relationship between paper notes and physical commodities, banks began to simply declare by government decree that the paper notes have value.
 
 <img src="images/fiat.jpg" />
 
@@ -94,12 +94,12 @@ Bitcoin decentralizes control of money supply
 
 # transactional friction
 
+- high fees, not possible to pay on weekends
 - making payments today requires trusting a 3rd-party
   - bank, credit union, credit card company, ...
 - these 3rd-parties mediate disputes through non-reversible transactions (chargebacks)
   - increases costs and limits minimum transaction size
   - with possibility of reversal, need for trust spreads
-- high fees, not possible to pay on weekends
 
 !SLIDE
 
