@@ -107,6 +107,9 @@ Bitcoin decentralizes control of money supply
 
     "What is needed is an electronic payment system based on cryptographic proof instead of trust, allowing any two willing parties to transact directly with each other without the need for a trusted third party"
 
+- irreversible transactions protect merchants from fraud
+- [escrow](https://en.bitcoin.it/wiki/Bitcoin_Escrow_Service) protects buyers
+
 !SLIDE
 
 <img src="images/change.jpg" />
@@ -244,7 +247,6 @@ to acquire bitcoins, you need someone willing to trade bitcoins.
   - payment processor that allows merchants to accept bitcoin and get paid in currency of choice
 - [p2pool](http://p2pool.org/)
   - a decentralized [mining pool](https://en.bitcoin.it/wiki/Mining_Pool)
-- [escrow](https://en.bitcoin.it/wiki/Bitcoin_Escrow_Service)
 - [other crypto currencies](https://bitcointalk.org/index.php?topic=134179.0)
 
 !SLIDE
