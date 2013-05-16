@@ -211,6 +211,8 @@
         <pre><code>&quot;We define an electronic coin as a chain of digital signatures. Each owner transfers the coin to the next by digitally signing a hash of the previous transaction and the public key of the next owner and adding these to the end of the coin. A payee can verify the signatures to verify the chain of ownership.&quot;
         </code></pre>
         
+        <p>a bitcoin is defined as a chain of transactions.</p>
+        
         <p><img src="images/transactions.png" /></p>
       </div>
       <div class='spacer bottom'></div>
@@ -218,7 +220,7 @@
     <section class='left slide'>
       <div class='spacer top'></div>
       <div class='content'>
-        <h1>double-spend</h1>
+        <h1>double-spend problem</h1>
         
         <pre><code>&quot;The problem of course is the payee can&#39;t verify that one of the owners did not double-spend the coin.&quot;
         </code></pre>
@@ -229,8 +231,9 @@
         <ul>
         <li>after each transaction, return coin to mint</li>
         <li>mint checks transaction and issues new coin</li>
+        <li>but then entire money system relies on this central authority...</li>
         </ul></li>
-        <li>problem is entire money system relies on this central authority</li>
+        <li>is there a decentralized solution?</li>
         </ul>
       </div>
       <div class='spacer bottom'></div>
@@ -242,6 +245,12 @@
         
         <pre><code>&quot;The solution we propose begins with a timestamp server. A timestamp server works by taking a hash of a block of items to be timestamped and widely publishing the hash... The timestamp proves that the data must have existed at the time, obviously, in order to get into the hash. Each timestamp includes the previous timestamp in its hash, forming a chain, with each additional timestamp reinforcing the ones before it.&quot;
         </code></pre>
+        
+        <p>to prevent double spends, we must know every transaction of every coin.</p>
+        
+        <ul>
+        <li>transactions are stored in &quot;blocks&quot;</li>
+        </ul>
         
         <p><img src="images/timestamp.png" /></p>
       </div>
@@ -256,12 +265,12 @@
         </code></pre>
         
         <ul>
-        <li>solves the problem of determining representation in majority decision
-        making
+        <li>generating a valid block requires solving an exponentially difficult computational problem</li>
+        <li>this proof-of-work makes it possible to reach consensus on transaction history
         
         <ul>
-        <li>one-CPU-one-vote</li>
-        <li>the majority decision is represented by the longest chain, which has the greatest proof-of-work effort invested in it</li>
+        <li>consensus is represented by the longest chain of blocks, which has the greatest proof-of-work effort invested in it</li>
+        <li>&quot;one-CPU-one-vote&quot;</li>
         </ul></li>
         </ul>
       </div>
@@ -272,14 +281,16 @@
       <div class='content'>
         <h1>decentralized trust</h1>
         
+        <h2>possible to manipulate consensus?</h2>
+        
         <ul>
-        <li>if a majority of CPU power is controlled by honest nodes, the honest chain will grow the fastest and outpace any competing chains</li>
         <li>to modify a past block, an attacker would have to redo the proof-of-work of the block and all blocks after it and then catch up with and surpass the work of the honest nodes
         
         <ul>
         <li>probability of a slower attacker catching up diminishes exponentially as subsequent blocks are added</li>
         </ul></li>
-        <li>to compensate for varience in mining power over time, the proof-of-work difficulty is determined by a moving average targeting 1 block every 10 minutes</li>
+        <li>if a majority of CPU power is controlled by honest nodes, the honest chain will grow the fastest and outpace any competing chains</li>
+        <li>why would someone want to be an honest node?</li>
         </ul>
       </div>
       <div class='spacer bottom'></div>
@@ -287,19 +298,20 @@
     <section class='left slide'>
       <div class='spacer top'></div>
       <div class='content'>
-        <h1>decentralized supply</h1>
+        <h1>incentive to &quot;miners&quot;</h1>
         
         <pre><code>&quot;By convention, the first transaction in a block is a special transaction that starts a new coin owned by the creator of the block. This adds an incentive for nodes to support the network, and provides a way to initially distribute coins into circulation, since there is no central authority to issue them.&quot;
         </code></pre>
         
         <ul>
-        <li>coin creation
+        <li>coins are given to those who &quot;<a href="https://en.bitcoin.it/wiki/Mining">mine</a>&quot; (generate) blocks</li>
+        <li>network periodically updates proof-of-work difficulty to keep rate of blocks roughly constant at 1 block every 10 minutes</li>
+        <li>new coin creation starts at an initial rate of 50 coins per block
         
         <ul>
-        <li>starts at an initial rate of 50 coins per ~10 minutes (per block)</li>
-        <li>this rate halves roughly every ~4 years (210,000 blocks)</li>
+        <li>this rate halves roughly every 210,000 blocks (~4 years)</li>
         </ul></li>
-        <li>optional transaction fees also incentize miners</li>
+        <li>optional transaction fees also incentivize miners</li>
         </ul>
       </div>
       <div class='spacer bottom'></div>
@@ -307,7 +319,16 @@
     <section class='slide'>
       <div class='spacer top'></div>
       <div class='content'>
-        <h1>practical usage of Bitcoin</h1>
+        <h1>decentralized supply</h1>
+        
+        <p><img src="images/total_bitcoins_over_time_graph.png" /></p>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>practical use of Bitcoin</h1>
       </div>
       <div class='spacer bottom'></div>
     </section>
@@ -316,10 +337,11 @@
       <div class='content'>
         <h1>wallets</h1>
         
+        <p>to start using bitcoin, you need a bitcoin wallet.</p>
+        
         <ul>
-        <li>your wallet is a file and you do with it as you please</li>
-        <li>full node wallets like bitcoin-qt</li>
-        <li>thin client wallets like electrum</li>
+        <li>full node wallets like <a href="http://bitcoin.org/en/download">bitcoin-qt</a></li>
+        <li>thin client wallets like <a href="http://electrum.org/">electrum</a></li>
         <li>online client-side wallets like <a href="https://blockchain.info">blockchain.info</a></li>
         <li><a href="https://bitaddress.org">paper/brain/vanity wallets</a></li>
         <li><a href="https://en.bitcoin.it/wiki/Hardware_wallet">hardware wallets</a></li>
@@ -330,9 +352,9 @@
     <section class='slide'>
       <div class='spacer top'></div>
       <div class='content'>
-        <h1>exchanging between</h1>
+        <h1>fiat =&gt; bitcoin</h1>
         
-        <h2>fiat and crypto</h2>
+        <p>to acquire bitcoins, you need someone willing to trade bitcoins.</p>
         
         <ul>
         <li>local exchanges like <a href="https://localbitcoins.com">localbitcoins</a></li>
@@ -346,14 +368,19 @@
     <section class='slide'>
       <div class='spacer top'></div>
       <div class='content'>
-        <h1>transactions</h1>
+        <h1>bitcoin transactions</h1>
+        
+        <h2>high-level recap</h2>
         
         <ul>
         <li>instant for unconfirmed</li>
-        <li>~10 minutes per confirmation</li>
+        <li>~10 minutes per confirmation (block)</li>
         <li>available 24/7</li>
         <li>&lt; 1% fees</li>
         <li>irreversible</li>
+        <li>public to everyone on the blockchain</li>
+        <li>traced to pseudonyms</li>
+        <li>can be truly anonymous with <a href="https://torproject.org">tor</a> and <a href="https://blockchain.info/wallet/send-shared">coin mixing services</a>, or proposed <a href="http://spar.isi.jhu.edu/~mcgreen/ZerocoinOakland.pdf">zerocoin extension</a></li>
         </ul>
       </div>
       <div class='spacer bottom'></div>
@@ -367,34 +394,24 @@
       </div>
       <div class='spacer bottom'></div>
     </section>
-    <section class='slide'>
+    <section class='left slide'>
       <div class='spacer top'></div>
       <div class='content'>
-        <h1>transaction history</h1>
+        <h1>unmentioned</h1>
         
         <ul>
-        <li>transactions are public to everyone on the blockchain</li>
-        <li>traced to pseudonyms</li>
-        <li>capable of true anonymity with <a href="https://torproject.org">tor</a> and <a href="https://blockchain.info/wallet/send-shared">coin mixing services</a>, or proposed <a href="http://spar.isi.jhu.edu/~mcgreen/ZerocoinOakland.pdf">zerocoin extension</a></li>
-        </ul>
-      </div>
-      <div class='spacer bottom'></div>
-    </section>
-    <section class='slide'>
-      <div class='spacer top'></div>
-      <div class='content'>
-        <h1>how to hack on <a href="https://en.bitcoin.it/wiki/Main_Page">bitcoin</a></h1>
+        <li><a href="https://bitpay.com/">bitpay</a>
         
         <ul>
-        <li>wallets
-        
-        <ul>
-        <li><a href="https://en.bitcoin.it/wiki/API_reference_(JSON-RPC)">bitcoin rpc</a></li>
-        <li><a href="https://blockchain.info">blockchain.info</a></li>
+        <li>payment processor that allows merchants to accept bitcoin and get paid in currency of choice</li>
         </ul></li>
-        <li>payment processors</li>
-        <li>fiat/btc exchange</li>
-        <li>asset exchanges</li>
+        <li><a href="http://p2pool.org/">p2pool</a>
+        
+        <ul>
+        <li>a decentralized <a href="https://en.bitcoin.it/wiki/Mining_Pool">mining pool</a></li>
+        </ul></li>
+        <li><a href="https://en.bitcoin.it/wiki/Bitcoin_Escrow_Service">escrow</a></li>
+        <li><a href="https://bitcointalk.org/index.php?topic=134179.0">other crypto currencies</a></li>
         </ul>
       </div>
       <div class='spacer bottom'></div>
