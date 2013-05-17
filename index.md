@@ -253,7 +253,10 @@ to acquire bitcoins, you need someone willing to trade bitcoins.
 
 # questions?
 ## comments?
-### email me at dinosaur@riseup.net
+
+### find me at <https://dinosaur.io>
+
+<bitcoin:16q9Qm5wpaNmeuFd1UwdsWyJ1ndMPKq5uA>
 
 !SLIDE
 
@@ -261,4 +264,3 @@ to acquire bitcoins, you need someone willing to trade bitcoins.
 
 - <https://bitcointalk.org>
 - <http://reddit.com/r/Bitcoin>
-- <http://www.slideshare.net/KyleDrake/bitcoin-the-cyberpunk-cryptocurrency>
