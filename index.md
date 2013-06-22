@@ -204,7 +204,7 @@ to prevent double spends, we must know every transaction of every coin.
 to start using bitcoin, you need a bitcoin wallet.
 
 - full node wallets like [bitcoin-qt](http://bitcoin.org/en/download)
-- thin client wallets like [electrum](http://electrum.org/)
+- thin client wallets like [multibit](https://multibit.org/), [electrum](http://electrum.org/)
 - online client-side wallets like [blockchain.info](https://blockchain.info)
 - [paper/brain/vanity wallets](https://bitaddress.org)
 - [hardware wallets](https://en.bitcoin.it/wiki/Hardware_wallet)
@@ -241,7 +241,7 @@ to acquire bitcoins, you need someone willing to trade bitcoins.
 
 !SLIDE left
 
-# unmentioned
+# misc info
 
 - [bitpay](https://bitpay.com/)
   - payment processor that allows merchants to accept bitcoin and get paid in currency of choice
